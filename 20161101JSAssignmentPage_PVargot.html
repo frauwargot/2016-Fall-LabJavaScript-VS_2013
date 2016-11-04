@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--
+           Assignment:
+           //use prompt to ask user the type of operation
+           //to run "+" "-" "*" "/"
+           //use a switch and have your cases set up for
+           //each operation, make sure to include the
+           //default (in case wrong operationnis entered)
+           //under each operqtion request two values then
+           //perform the opration and display the result
+        -->
+    <script>
+        
+        var n1 = prompt("Enter first number: ", "1");        
+        var n2 = prompt("Enter second number: ", "2");
+        var operation = prompt("Enter type of operation (+ - * /) : ", "+");        
+        do
+        {
+            if ((isNaN(n1)==true) || (isNaN(n2)==true))
+            {                
+                alert("Incorrect input, try again!");                
+                n1 = prompt("Enter first number: ", "1");
+                n2 = prompt("Enter second number: ", "2");                
+            }            
+        } while (((isNaN(n1) == true) || (isNaN(n2) == true)));
+
+        do {
+            if (((operation == "+") || (operation == "-") || (operation == "*") || (operation == "-"))==false)
+            {
+                alert("Incorrect input, try again!");
+                operation = prompt("Enter type of operation (+ - * /) : ", "+");
+            }
+        } while (((operation == "+") || (operation == "-") || (operation == "*") || (operation == "-")) == false);
+       
+            switch (operation) {
+                case "+":
+                    {
+                        var result = Number(n1) + Number(n2);
+                        alert(n1 + " " + operation + " " + n2 + " = " + result);
+                    }
+                    break;
+                case "-":
+                    {
+                        var result = Number(n1) - Number(n2);
+                        alert(n1 + " " + operation + " " + n2 + " = " + result);
+                    }
+                    break;
+                case "*":
+                    {
+                        var result = Number(n1) * Number(n2);
+                        alert(n1 + " " + operation + " " + n2 + " = " + result);
+                    }
+                    break;
+                case "/":
+                    {
+                        var result = Number(n1) / Number(n2);
+                        alert(n1 + " " + operation + " " + n2 + " = " + result);
+                    }
+                    break;
+
+            }//end of switch
+     
+           
+    
+           //optional:
+           //you may use the isNAN() method
+           //that checks whether an entry is not a number
+           //before doing any computation
+      
+        </script>
+</body>
+</html>
